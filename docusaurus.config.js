@@ -8,7 +8,18 @@ const config = {
   url: 'https://docs.docusapiens.ai',
   baseUrl: '/',
   onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'warn',
+    },
+  },
+
+  // Docusaurus Faster (v3.6+): SWC + Rspack instead of Babel + webpack
+  future: {
+    experimental_faster: true,
+    v4: true,
+  },
 
   presets: [
     [
