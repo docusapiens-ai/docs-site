@@ -98,7 +98,7 @@ Docusaurus provides built-in components you can use immediately:
 
 Display content in tabs:
 
-```mdx
+````mdx
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -117,7 +117,7 @@ print("Hello")
 ```
   </TabItem>
 </Tabs>
-```
+````
 
 [SCREENSHOT PLACEHOLDER: Documentation showing tabbed code examples with "JavaScript" and "Python" tabs]
 
@@ -271,7 +271,7 @@ import InteractiveButton from '@site/src/components/InteractiveButton';
 
 Show same thing in multiple languages:
 
-```mdx
+````mdx
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -306,7 +306,7 @@ const response = await fetch("https://api.example.com", {
 ```
   </TabItem>
 </Tabs>
-```
+````
 
 [SCREENSHOT PLACEHOLDER: Tabbed interface showing same API call in three languages with nice syntax highlighting]
 
@@ -337,7 +337,7 @@ Use environment variables for secrets instead.
 
 ### Example 3: Complex Reference Documentation
 
-```mdx
+````mdx
 # API Reference
 
 ## Endpoints
@@ -374,7 +374,7 @@ curl https://api.example.com/posts
 
   </TabItem>
 </Tabs>
-```
+````
 
 [SCREENSHOT PLACEHOLDER: API documentation with tabbed endpoints, each showing formatted request and response]
 
