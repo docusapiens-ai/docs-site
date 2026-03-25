@@ -2,262 +2,149 @@
 
 ## Goal
 
-Manually trigger a rebuild of your documentation site, or understand how automatic rebuilds work when you push to GitHub.
+Manually trigger a rebuild of your documentation site from the DocuSapiens dashboard.
 
 ---
 
 ## Prerequisites
 
 - A deployed site on DocuSapiens
-- Write access to the GitHub repository
 
 ---
 
-## Automatic Rebuilds (Without Any Action)
+## How Builds Work
 
-### How It Works
+DocuSapiens does **not** automatically rebuild your site when you push to GitHub. Every build is **manually triggered** from the dashboard. This gives you full control over when changes go live.
 
-DocuSapiens automatically rebuilds your site whenever you push to the selected branch:
-
-```
-You commit & push to GitHub
-  ↓ (within 5 seconds)
-DocuSapiens detects the change
-  ↓
-Rebuilds the site (30-60 seconds)
-  ↓
-Retrains AI chat model
-  ↓
-Site and chat go live
-```
-
-**No button to click. No manual steps. Automatic.**
-
-### Example Workflow
-
-1. Edit `docs/getting-started.md` in your editor
-2. Save the file locally
-3. Commit: `git add docs/ && git commit -m "Update getting started"`
-4. Push: `git push origin main` (or your selected branch)
-5. **Done!** DocuSapiens detects this automatically
-
-[SCREENSHOT PLACEHOLDER: Terminal showing git commit and push commands]
-
-Go to your DocuSapiens dashboard and watch the build appear:
-
-[SCREENSHOT PLACEHOLDER: Dashboard showing new build appearing in the build history with timestamp showing "just now"]
-
----
-
-## Manual Rebuild (If Needed)
-
-Sometimes you might want to manually trigger a rebuild without making code changes. For example:
-
-- You fixed a problem and want DocuSapiens to retry
+**When to trigger a rebuild:**
+- You updated your docs in GitHub and want to publish the changes
 - You want to force a re-index of your docs for the AI chat
-- You switched branches and want to rebuild from the new branch
+- You changed the source branch and want to rebuild from it
 
-### Step 1: Go to Your Site Settings
+---
 
-In the DocuSapiens dashboard, find your site:
+## Step 1: Go to Your Site
 
-1. Click **"Sites"** in the sidebar
-2. Find your site in the list
-3. Click on it to open site details
+From the DocuSapiens dashboard, click **"Sites"** in the sidebar, then click on the site you want to rebuild.
 
-[SCREENSHOT PLACEHOLDER: Sites list page with one site highlighted, showing site card with site name and URL]
+[SCREENSHOT PLACEHOLDER: Sites list with a site card highlighted]
 
-### Step 2: Open Build History
+---
 
-You should see a section called **"Builds"** or **"Build History"** showing past builds:
+## Step 2: Click "Rebuild"
 
-[SCREENSHOT PLACEHOLDER: Build history table/list showing recent builds with timestamps, status (Success/Failed), and duration]
-
-### Step 3: Find "Rebuild" or "Retrigger" Button
-
-Look for a **"Rebuild"** or **"Retrigger Latest Build"** button.
+On the site details page, find the **"Rebuild"** button.
 
 This is typically located:
-- Next to the most recent build
+- At the top of the site details page
+- Next to the most recent build in the build history
 - In a **"Settings"** or **"Actions"** menu
-- As a button with a refresh/circular arrow icon
 
-[SCREENSHOT PLACEHOLDER: Build history showing "Rebuild" button next to most recent build, or "..." menu that reveals "Rebuild" option]
+[SCREENSHOT PLACEHOLDER: Site details page showing "Rebuild" button]
 
-### Step 4: Confirm and Trigger
-
-Click **"Rebuild"**. A confirmation dialog might appear:
+Click **"Rebuild"**. A confirmation dialog may appear:
 
 ```
-"Rebuild from branch: main?"
-"This will fetch latest changes and rebuild the site."
+Rebuild from branch: main?
+This will fetch latest changes and rebuild the site.
 
 [Cancel]  [Rebuild]
 ```
 
 Click **"Rebuild"** to confirm.
 
-[SCREENSHOT PLACEHOLDER: Confirmation modal with "Rebuild" button]
+---
 
-### Step 5: Monitor Progress
+## Step 3: Monitor Progress
 
-The build starts immediately. You'll see:
+The build starts immediately. You will see live progress in the dashboard.
 
-[SCREENSHOT PLACEHOLDER: Live rebuild progress showing:
-- "Starting rebuild..."
-- "Fetching latest files..."
-- "Running Docusaurus..."
-- Progress bar
-- Estimated time remaining]
+[SCREENSHOT PLACEHOLDER: Build progress showing steps: Fetching files → Building → Training AI → Complete]
 
-### Step 6: Build Complete
+---
 
-When done, you'll see:
+## Step 4: Build Complete
+
+When done, you will see a success message with your site URL:
 
 ```
-Build Status: ✓ Success
+Build Status: Success
 Built at: 2:34 PM
 Duration: 42 seconds
-Site: https://my-awesome-project.docusapiens.ai
+Site: https://my-awesome-project.docusapiens.site
 ```
 
-[SCREENSHOT PLACEHOLDER: Build success confirmation with green checkmark, timestamp, and site URL]
+[SCREENSHOT PLACEHOLDER: Build success confirmation with green checkmark and site URL]
 
 ---
 
 ## Changing the Source Branch
 
-If you want to deploy from a different branch (e.g., from `production` instead of `main`):
+To deploy from a different branch (e.g., `production` instead of `main`):
 
-### Step 1: Open Site Settings
+1. On your site detail page, click **"Settings"** or the gear icon
+2. Find the **"Source Branch"** setting and change it
+3. Click **"Save Changes"**
+4. Trigger a rebuild manually to deploy from the new branch
 
-Click on your site, then click **"Settings"** or the gear icon.
-
-[SCREENSHOT PLACEHOLDER: Site details page with "Settings" button or gear icon highlighted]
-
-### Step 2: Change the Branch
-
-Look for **"Source Branch"** or **"Deploy From":
-
-Current: `main` → Change to: `production`
-
-[SCREENSHOT PLACEHOLDER: Settings form showing branch selector dropdown with "main" currently selected, open dropdown showing alternatives like "staging", "production"]
-
-### Step 3: Save and Rebuild
-
-Click **"Save Changes"**.
-
-DocuSapiens will automatically trigger a rebuild from the new branch.
-
-[SCREENSHOT PLACEHOLDER: Build automatically starting after branch change, progress shown in dashboard]
+[SCREENSHOT PLACEHOLDER: Settings form with branch dropdown]
 
 ---
 
 ## Force Re-index of AI Chat
 
-If you notice the AI chat isn't up-to-date with recent docs changes, you can force a re-index:
+A rebuild always re-indexes your documentation for the AI chat. Simply rebuild and the AI chat will reflect your latest docs.
 
-### Option A: Trigger a Rebuild (Easiest)
-
-A rebuild automatically re-indexes. Just rebuild (see above) and the AI chat will retrain.
-
-### Option B: Rebuild and Update from Dashboard
-
-In **Site Settings**, look for **"AI Chat Settings"** or **"Reindex"** button:
-
-Click **"Reindex AI Chat Model"**.
-
-[SCREENSHOT PLACEHOLDER: AI Chat section in settings with "Reindex" or "Force Retrain" button]
-
-This re-reads your docs and retrains the AI model without rebuilding the website.
+If you want to re-index without rebuilding the whole site, look for a **"Reindex AI Chat"** button in Site Settings.
 
 ---
 
-## Rollback to Previous Version
+## Rollback to a Previous Version
 
-If a build goes wrong, you can "rollback" to the previous successful version:
+If a build goes wrong, you can restore a previous successful build:
 
-### In Build History
+1. On the site details page, open **"Build History"**
+2. Find an older successful build
+3. Click **"Restore"** or **"Deploy This Version"**
 
-Click on an older successful build and select **"Restore"** or **"Deploy This Version"**:
-
-[SCREENSHOT PLACEHOLDER: Build history showing past builds, one older build with "Restore" button highlighted]
-
-This redeploys that version while you fix the issue:
-
-```
-Current version: broken
-  ↓ (click restore)
-Deployed version: previous good version
-  ↓ (while you fix the issue in GitHub)
-Next push: new fixed version
-```
+[SCREENSHOT PLACEHOLDER: Build history showing a "Restore" button on a past build]
 
 ---
 
-## Monitoring and Logs
+## Build Status Reference
 
-### Build Status
+| Status | Meaning |
+|--------|---------|
+| Success (green) | Site built and deployed |
+| Failed (red) | Build failed; previous version still live |
+| In Progress (blue) | Currently building |
 
-Each build shows:
-- ✅ Success (green)
-- ❌ Failed (red)
-- ⏳ In progress (spinner)
-
-### Build Logs
-
-Click on a build to see detailed logs:
-
-[SCREENSHOT PLACEHOLDER: Build details page showing full logs with:
-- Timestamp
-- Fetching step with file count
-- Build step with warnings/errors
-- Deployment step
-- AI training step]
-
-If a build fails, the logs show why:
-
-```
-❌ Build Failed
-
-ERROR: Unexpected closing code block at docs/api.md:42:
-Expected closing ``` but found regular text.
-```
-
-Return to GitHub, fix the issue, and commit. DocuSapiens retries automatically.
+Click on any build to see detailed logs.
 
 ---
 
-## Common Issues During Rebuild
+## Common Issues
 
-### ❌ "Build failed: docs folder not found"
+### "docs/ folder not found"
 
-**Cause:** Your `docs/` folder moved or was deleted.
+Your `docs/` folder does not exist on the deployed branch. Create it or update the docs folder path in Site Settings.
 
-**Fix:** Make sure docs/ exists on the branch you're deploying from.
+### "Markdown syntax error at line X"
 
-### ❌ "Markdown syntax error at line X"
+An unclosed code block, invalid frontmatter, or broken link in the file mentioned. Fix the issue in GitHub, then trigger a new rebuild.
 
-**Cause:** Unclosed code block, invalid frontmatter, or broken link.
+### "Build timeout"
 
-**Fix:** Check the file mentioned in the error message and fix the syntax.
-
-### ❌ "Build timeout"
-
-**Cause:** Extremely large repository (>500MB docs).
-
-**Fix:** Contact support.
+Repository is too large (>500MB). Contact support.
 
 ---
 
 ## Next Steps
 
-- **Deploy updates automatically:** Push to GitHub, DocuSapiens handles the rest
-- **Make updates with AI awareness:** [Use AI Chat](./use-ai-chat.md)
-- **See all site options:** [Dashboard Reference](../reference/dashboard.md)
+- **Connect a new repo:** [Connect GitHub Repo](./connect-github-repo.md)
+- **Manage site settings:** [Manage Your Sites](./manage-sites.md)
+- **Use AI chat:** [AI Chat Guide](./use-ai-chat.md)
 
 ---
-
-**That's it!** Your site rebuilds automatically on commit, or manually when you need it.
 
 Questions? Check [FAQs](../reference/faq.md).

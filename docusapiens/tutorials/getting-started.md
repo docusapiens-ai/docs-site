@@ -7,7 +7,7 @@ By the end of this tutorial, you will:
 - Connect your first GitHub repository
 - Deploy your documentation site
 - Ask questions using the integrated AI chat
-- Make updates and see them go live automatically
+- Publish updates by triggering a rebuild
 
 ## What You'll Need
 
@@ -80,12 +80,12 @@ Select the repository containing your Markdown documentation (must have a `docs/
 
 [SCREENSHOT PLACEHOLDER: Repository selection interface showing a list of repos with "Public" badges, search bar at top, and selected repo highlighted]
 
-### 2.3 Choose a Subdomain
+### 2.3 Choose a Site Name
 
-Enter your desired subdomain. Your site will be available at:
+Enter your desired site name. Your site will be available at:
 
 ```
-https://<subdomain>.docusapiens.ai
+https://<site-name>.docusapiens.site
 ```
 
 **Rules:**
@@ -95,7 +95,7 @@ https://<subdomain>.docusapiens.ai
 
 Example: `my-project`, `awesome-docs`, `company-support`
 
-[SCREENSHOT PLACEHOLDER: Form showing subdomain input field with text "https://[your-input-here].docusapiens.ai" displayed below]
+[SCREENSHOT PLACEHOLDER: Form showing site name input field with text "https://[your-site-name].docusapiens.site" displayed below]
 
 ### 2.4 Select Branch (Optional)
 
@@ -140,7 +140,7 @@ The build typically takes 30-60 seconds. You'll see:
 Once successful, you'll see:
 
 **Status:** "Build Successful ✓"  
-**Site URL:** `https://<subdomain>.docusapiens.ai`  
+**Site URL:** `https://<site-name>.docusapiens.site`  
 **AI Chat Status:** "Ready"
 
 [SCREENSHOT PLACEHOLDER: Success screen showing green checkmarks, site URL as a clickable link, "Visit Site" button in prominent color]
@@ -249,19 +249,21 @@ Add a commit message (e.g., "Update documentation") and click **Commit changes**
 
 [SCREENSHOT PLACEHOLDER: GitHub commit dialog showing commit message, "Commit changes" button]
 
-### 6.3 Watch Auto-Rebuild
+### 6.3 Trigger a Rebuild
 
-Return to your DocuSapiens dashboard. You should see a new build starting:
+Now go back to the DocuSapiens dashboard and trigger a rebuild to publish your changes:
 
-[SCREENSHOT PLACEHOLDER: Dashboard showing a new build initiated, timestamp showing recent activity]
+1. Click on your site
+2. Click **"Rebuild"**
+3. Wait ~45 seconds for the build to complete
+
+[SCREENSHOT PLACEHOLDER: Dashboard showing Rebuild button on site details page]
 
 **Build status progresses through:**
 1. Fetching changes
 2. Building site
 3. Training AI
-4. Complete ✓
-
-[SCREENSHOT PLACEHOLDER: Build progress with timestamps for each step, ultimately showing "Build successful" with new build time]
+4. Complete
 
 ### 6.4 Verify the Update
 
@@ -280,7 +282,7 @@ Return to your live site and refresh the page.
 Your site is now live and public (for public repos). Share the link:
 
 ```
-https://<subdomain>.docusapiens.ai
+https://<site-name>.docusapiens.site
 ```
 
 with:
@@ -304,7 +306,6 @@ You can also embed the AI chat on external pages. [See integration guide →](..
 **Common causes:**
 - Repository has no `docs/` folder (create one and add `.md` files)
 - Markdown files have invalid syntax (check for unclosed code blocks)
-- Private repo without permission (upgrade to Basic plan)
 
 **Solution:** Fix the issue in GitHub and trigger a rebuild from the dashboard.
 
@@ -321,7 +322,7 @@ docs/
 └── api-reference.md
 ```
 
-Then commit and let DocuSapiens rebuild.
+Then commit and trigger a rebuild from the dashboard.
 
 ### ❌ "AI chat says 'I don't know'"
 
@@ -333,10 +334,9 @@ The AI only answers based on your docs. If the information isn't documented, it 
 
 Now that your site is live:
 
-1. **Learn more about organizing docs** — [Docusaurus Getting Started](../../docusaurus/README.md)
-2. **Customize your site** — [Configure Sidebar](../how-to/configure-sidebar.md) (coming soon)
-3. **Use advanced Markdown** — [MDX Features](../../docusaurus/how-to/use-mdx.md)
-4. **See all dashboard features** — [Dashboard Reference](../reference/dashboard.md)
+1. **Learn more about writing docs** — [Writing Documentation Guide](../../writing-docs/README.md)
+2. **Rebuild your site** — [Rebuild Your Site](../how-to/rebuild-site.md)
+3. **How the AI chat works** — [AI Chat Explained](../explanation/ai-chat.md)
 
 ---
 

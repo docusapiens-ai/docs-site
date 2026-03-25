@@ -47,26 +47,27 @@ The modal shows a list of your GitHub repositories.
 
 You should see:
 - Repository name
-- Whether it's public or private
 - Last commit date
 - Owner name
 
-### Step 4: Choose a Subdomain
+> **Note:** Only **public** repositories are supported during Alpha.
 
-Enter the subdomain for your documentation site:
+### Step 4: Choose a Site Name
+
+Enter the site name for your documentation site:
 
 ```
-https://<YOUR-SUBDOMAIN>.docusapiens.ai
+https://<YOUR-SITE-NAME>.docusapiens.site
 ```
 
-#### Subdomain Rules
+#### Site Name Rules
 
 - **Lowercase letters only** (no uppercase)
 - **Numbers and hyphens allowed** (no underscores or spaces)
 - **3-50 characters**
 - **Must be unique** (not taken by another DocuSapiens user)
 
-#### Examples of Good Subdomains
+#### Examples of Good Site Names
 
 - `my-project`
 - `awesome-docs`
@@ -80,7 +81,7 @@ https://<YOUR-SUBDOMAIN>.docusapiens.ai
 - `my project` (spaces not allowed)
 - `docs` (likely taken)
 
-[SCREENSHOT PLACEHOLDER: Subdomain input field with validation feedback, showing "Available ✓" or "Already taken ✗" in real-time]
+[SCREENSHOT PLACEHOLDER: Site name input field with validation feedback, showing "Available ✓" or "Already taken ✗" in real-time]
 
 ### Step 5: Select the Branch (Optional)
 
@@ -113,7 +114,7 @@ Review your choices:
 
 ```
 Repository:     my-awesome-project ✓
-Subdomain:      my-awesome-project.docusapiens.ai ✓
+Site name:      my-awesome-project.docusapiens.site ✓
 Branch:         main ✓
 Docs folder:    docs/ ✓
 ```
@@ -138,7 +139,7 @@ With estimated time: "~45 seconds remaining"]
 1. DocuSapiens connects to your GitHub repository
 2. Fetches all files from the `docs/` folder
 3. Processes them with Docusaurus
-4. Uploads the built site to Google Cloud Storage
+4. Uploads the built site to hosting
 5. Trains the AI chat model on your content
 
 ### Step 9: Site is Live!
@@ -146,7 +147,7 @@ With estimated time: "~45 seconds remaining"]
 When the build completes successfully:
 
 [SCREENSHOT PLACEHOLDER: Green "Build Successful ✓" message, showing:
-- Site URL: https://my-awesome-project.docusapiens.ai
+- Site URL: https://my-awesome-project.docusapiens.site
 - Build time: 42 seconds
 - AI Status: Ready
 - Button: "Visit Site"]
@@ -155,22 +156,16 @@ Click **"Visit Site"** to see your live documentation!
 
 ---
 
-## What Happens After Creation
+## Keeping Your Site Up to Date
 
-### Automatic Syncing
+After your site is created, DocuSapiens does **not** automatically rebuild when you push to GitHub. Builds are **manual** — you trigger them from the dashboard whenever you're ready to publish new changes.
 
-Your site is now connected to GitHub. Whenever you:
-1. Push commits to your selected branch
-2. DocuSapiens automatically:
-   - Rebuilds your site (30-60 seconds)
-   - Updates the AI chat model
-   - Deploys new changes live
+To update your site:
+1. Open your site in the [DocuSapiens dashboard](https://app.docusapiens.ai)
+2. Click **"Rebuild"**
+3. Wait ~45 seconds for the build to complete
 
-### GitHub Webhook
-
-DocuSapiens adds a webhook to your repository that notifies it of new commits. No setup needed on your part.
-
-[SCREENSHOT PLACEHOLDER: GitHub repository settings showing "Webhooks" section with DocuSapiens webhook listed]
+See [How to Rebuild Your Site](./rebuild-site.md) for details.
 
 ---
 
@@ -182,7 +177,7 @@ DocuSapiens adds a webhook to your repository that notifies it of new commits. N
 
 **Solution:**
 1. Go to [GitHub Settings → Applications](https://github.com/settings/applications)
-2. Find "DocuSapiens.ai"
+2. Find "DocuSapiens"
 3. Click **"Grant access"** if prompted
 
 ### ❌ "docs/ folder not found"
@@ -192,7 +187,7 @@ DocuSapiens adds a webhook to your repository that notifies it of new commits. N
 **Solution:**
 1. Check your repository structure — where are your `.md` files?
 2. If they're in a folder like `documentation/`, specify that path in Step 6
-3. If you don't have `.md` files yet, see [Docusaurus Getting Started](../../docusaurus/tutorials/getting-started.md)
+3. If you don't have `.md` files yet, see [Writing Documentation Guide](../../writing-docs/README.md)
 
 ### ❌ "Build failed"
 
@@ -204,11 +199,11 @@ DocuSapiens adds a webhook to your repository that notifies it of new commits. N
    - Invalid YAML frontmatter
    - Broken image paths
 2. Fix the issues and commit
-3. DocuSapiens will automatically rebuild
+3. Trigger a manual rebuild from the dashboard
 
-### ❌ "Subdomain already taken"
+### ❌ "Site name already taken"
 
-**Cause:** Another user chose that subdomain first.
+**Cause:** Another user chose that site name first.
 
 **Solution:** Try a different name (e.g., add your company name: `my-company-docs`)
 
@@ -217,12 +212,11 @@ DocuSapiens adds a webhook to your repository that notifies it of new commits. N
 ## Next Steps
 
 - **Deploy your docs:** [Getting Started Tutorial](../tutorials/getting-started.md)
-- **Make updates automatically:** [How to Rebuild Your Site](./rebuild-site.md)
+- **Publish updates:** [How to Rebuild Your Site](./rebuild-site.md)
 - **Use the AI chat:** [How to Use AI Chat](./use-ai-chat.md)
-- **See all features:** [Dashboard Reference](../reference/dashboard.md)
 
 ---
 
-**Your site is now connected and live!** Every commit to your chosen branch will automatically update it.
+**Your site is now connected and live!** Trigger a rebuild from the dashboard whenever you want to publish new changes.
 
 Have questions? Check [FAQs](../reference/faq.md).

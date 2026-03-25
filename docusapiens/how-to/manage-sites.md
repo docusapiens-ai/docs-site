@@ -28,14 +28,13 @@ You'll see all your deployed sites displayed as:
 
 Each site shows:
 - **Site name** (repo name or custom name)
-- **URL** (the `.docusapiens.ai` domain)
+- **URL** (the `.docusapiens.site` domain)
 - **Status** (Active / Building / Failed)
 - **Last deployed** (timestamp)
 - **Build status** (✓ Success / ❌ Failed)
 
 [SCREENSHOT PLACEHOLDER: Sites list page showing 2-3 example sites in card format with:
 - Site name
-- Public/Private badge
 - URL as a link
 - Status indicator
 - "..." menu button]
@@ -79,7 +78,7 @@ To change the branch:
 1. Click the dropdown next to "Branch"
 2. Select a different branch
 3. Click "Save"
-4. DocuSapiens automatically rebuilds from the new branch
+4. Trigger a manual rebuild to deploy from the new branch
 
 [SCREENSHOT PLACEHOLDER: Settings form showing:
 - Repository field (read-only): "docusapiens-ai/docs-site"
@@ -95,21 +94,21 @@ If your docs are in a different location (e.g., `documentation/` or `src/docs/`)
 
 [SCREENSHOT PLACEHOLDER: Docs folder input field with "docs/" as default, with info text "This is where we look for .md files"]
 
-#### Subdomain
+#### Site URL
 
-- **Subdomain:** Your site's address
+- **Site URL:** Your site's public address
 
-Read-only field showing `your-subdomain.docusapiens.ai`
+Read-only field showing `your-site.docusapiens.site`
 
-To change your subdomain, you'll need to create a new site. (This feature might be available in future versions.)
+To change your site name, you'll need to create a new site. (This feature might be available in future versions.)
 
-[SCREENSHOT PLACEHOLDER: Subdomain field showing "my-awesome-docs.docusapiens.ai" with "Active" status indicator]
+[SCREENSHOT PLACEHOLDER: Site URL field showing "my-awesome-docs.docusapiens.site" with "Active" status indicator]
 
 ### Step 3: Save Changes
 
 After making changes, click **"Save Settings"**.
 
-DocuSapiens will validate and rebuild if necessary.
+If changes require a rebuild (e.g., branch or docs folder change), trigger one manually.
 
 [SCREENSHOT PLACEHOLDER: Settings form with "Save Settings" button, possibly showing success message after save]
 
@@ -124,8 +123,7 @@ On the site details page, scroll down to see **"Recent Builds"** or **"Build His
 [SCREENSHOT PLACEHOLDER: Build history list showing multiple builds with:
 - Timestamp of each build
 - Status (✓ Success / ❌ Failed / ⏳ In Progress)
-- Duration ("42 seconds")
-- Triggered by ("Push to main" or "Manual rebuild")]
+- Duration ("42 seconds")]
 
 ### Build Status Indicators
 
@@ -231,7 +229,7 @@ If you want to disable the chat widget on your site:
 
 Deleting a site:
 - Removes your deployed documentation site
-- The `.docusapiens.ai` domain becomes inactive
+- The `.docusapiens.site` domain becomes inactive
 - Your GitHub repository is **not** deleted (only the deployment)
 - You can redeploy anytime by connecting the repo again
 
@@ -247,8 +245,7 @@ Deleting a site:
 
 ```
 "Are you sure? This will:"
-- Remove your site from docusapiens.ai
-- Stop syncing with GitHub
+- Remove your site from docusapiens.site
 - Delete all builds and deployment history
 - Your docs repository remains on GitHub
 
@@ -302,8 +299,7 @@ Future versions will include:
 **Solution:**
 1. Click the build to see error logs
 2. Fix the issue in your GitHub repository
-3. Commit and push
-4. DocuSapiens rebuilds automatically
+3. Go back to the dashboard and trigger a manual rebuild
 
 ### ❌ "Build is taking too long"
 
@@ -322,21 +318,20 @@ Future versions will include:
 
 ### ❌ Changes don't appear on the site
 
-**Cause:** Build failed silently, or you're not pushing to the deployed branch.
+**Cause:** You haven't triggered a rebuild yet, or the last build failed.
 
 **Solution:**
-1. Check dashboard to confirm build succeeded
-2. Verify you're pushing to the correct branch (not a feature branch)
-3. Check build logs for errors
+1. Check the dashboard — did you trigger a rebuild after updating your docs?
+2. Confirm the build succeeded (check build status)
+3. Check build logs for errors if it failed
 
 ---
 
 ## Next Steps
 
 - **Deploy a new site:** [Connect GitHub Repo](./connect-github-repo.md)
-- **Update your site:** [Rebuild Your Site](./rebuild-site.md)
+- **Trigger a rebuild:** [Rebuild Your Site](./rebuild-site.md)
 - **Use AI chat:** [AI Chat Guide](./use-ai-chat.md)
-- **Dashboard features:** [Dashboard Reference](../reference/dashboard.md)
 
 ---
 

@@ -8,7 +8,7 @@ Answers to common questions about DocuSapiens.
 
 ### Q: How does DocuSapiens work?
 
-**A:** Connect a GitHub repository → DocuSapiens automatically builds a Docusaurus site → Your docs are live at `<subdomain>.docusapiens.ai` along with an AI chat assistant.
+**A:** Connect a GitHub repository, trigger a build from the dashboard, and your docs are live at `<site-name>.docusapiens.site` along with an AI chat assistant.
 
 See [What is DocuSapiens?](../explanation/what-is-docusapiens.md) for more details.
 
@@ -31,7 +31,7 @@ See [Getting Started Tutorial](../tutorials/getting-started.md).
 
 ### Q: Is my site live immediately after creating it?
 
-**A:** Yes. Once the build completes (usually ~45 seconds), your site is live and publicly accessibleat `https://<subdomain>.docusapiens.ai`.
+**A:** Yes. Once the build completes (usually ~45 seconds), your site is live and publicly accessibleat `https://<site-name>.docusapiens.site`.
 
 ---
 
@@ -47,9 +47,9 @@ See [Getting Started Tutorial](../tutorials/getting-started.md).
 
 For now, you get the clean, default Docusaurus theme which works great for most projects.
 
-### Q: Can I change my subdomain after creating a site?
+### Q: Can I change my site name after creating a site?
 
-**A:** Not yet. To use a different subdomain, create a new site. We're adding subdomain management soon.
+**A:** Not yet. To use a different site name, create a new site. We're adding site name management soon.
 
 ### Q: Can I use a custom domain (yourcompany.com)?
 
@@ -69,9 +69,7 @@ For now, you get the clean, default Docusaurus theme which works great for most 
 
 ### Q: Which repositories can I use?
 
-**A:** During Alpha, we support:
-- ✅ Public repositories (all access levels)
-- ❌ Private repositories (available in Basic plan when we exit Alpha)
+**A:** During Alpha, only **public** repositories are supported. Private repository support is planned for a future release.
 
 ### Q: What permissions does DocuSapiens need?
 
@@ -83,13 +81,15 @@ For now, you get the clean, default Docusaurus theme which works great for most 
 
 ### Q: How does GitHub sync work?
 
-**A:** DocuSapiens adds a webhook to your repository. When you push to the selected branch:
-1. GitHub notifies DocuSapiens (instant)
-2. DocuSapiens fetches your latest docs (< 5 seconds)
-3. Builds the site (30-60 seconds)
-4. Deploys live
+**A:** DocuSapiens does **not** automatically rebuild your site when you push to GitHub. Builds are **manual** — you trigger them from the dashboard whenever you want to publish new changes.
 
-**Result:** Your changes go live within 1-2 minutes of pushing to GitHub.
+Workflow:
+1. Update your Markdown files in GitHub
+2. Go to your site in the [DocuSapiens dashboard](https://app.docusapiens.ai)
+3. Click **"Rebuild"**
+4. Your changes go live in ~45 seconds
+
+See [How to Rebuild Your Site](../how-to/rebuild-site.md).
 
 ### Q: Can I disconnect DocuSapiens from GitHub?
 
@@ -136,7 +136,7 @@ You can change the folder path in site settings.
 - ❌ Word (`.docx`)
 - ❌ Google Docs
 
-See [Using MDX](../../docusaurus/how-to/use-mdx.md) for advanced features.
+See [Writing Documentation Guide](../../writing-docs/README.md) for advanced Markdown features.
 
 ### Q: Can I use images in my docs?
 
@@ -173,7 +173,7 @@ But it's better to use Markdown or MDX for component support.
 - **Reference** — Technical specs
 - **Explanation** — Understanding & concepts
 
-See [Docusaurus Getting Started](../../docusaurus/tutorials/getting-started.md).
+See [Writing Documentation Guide](../../writing-docs/README.md) for how to structure your docs.
 
 ### Q: Can I have different docs for different audiences?
 
@@ -188,7 +188,7 @@ See [Docusaurus Getting Started](../../docusaurus/tutorials/getting-started.md).
 **A:** Our AI uses **Retrieval Augmented Generation (RAG)**:
 - ✅ Answers only from your docs (no hallucinations)
 - ✅ Every answer is cited with links to source docs
-- ✅ Always current (retrains with every deploy)
+- ✅ Always current (retrains with every rebuild)
 - ✅ Never uses your docs to train public models
 
 See [How the AI Chat Works](../explanation/ai-chat.md).
@@ -199,7 +199,7 @@ See [How the AI Chat Works](../explanation/ai-chat.md).
 
 ### Q: Can I use my own AI model?
 
-**A:** Not yet. We're using OpenAI's models, optimized for accuracy on your docs.
+**A:** Not yet. This is on our roadmap for future releases.
 
 ### Q: Where is my conversation data stored?
 
@@ -245,7 +245,7 @@ See [How the AI Chat Works](../explanation/ai-chat.md).
 
 ### Q: What happens if DocuSapiens goes down?
 
-**A:** Your deployed site remains live (it's static HTML on Google's infrastructure). Chat might be unavailable during outages.
+**A:** Your deployed site remains live (it's static HTML). Chat may be unavailable during outages.
 
 ### Q: How large can my docs be?
 
@@ -275,6 +275,8 @@ This is plenty for most projects (typical docs are 10-50 MB).
 - **Basic** — €10/month, private repos, more AI
 - **Premium** — Custom pricing, SLA, enterprise features
 
+> Note: private repos are not currently supported during Alpha.
+
 But you'll keep free access to all Alpha features.
 
 ### Q: Can I cancel anytime?
@@ -297,10 +299,9 @@ See [Plans & Pricing](./plans.md) for full details.
 
 ### Q: Is my documentation private?
 
-**A:** 
-- **Public repos:** Your site is public (like your GitHub repo)
-- **Private repos:** Requires authentication (coming in Basic plan)
-- **AI chat:** Conversations are private to your session
+**A:** Yes, in combination with your site URL. Your site at `<site-name>.docusapiens.site` is public (like your GitHub repo). Chat conversations are private per session.
+
+Private site access (requiring authentication to view your docs) is not yet supported.
 
 ### Q: Will my docs be used to train AI models?
 
@@ -357,7 +358,9 @@ See [Plans & Pricing](./plans.md) for full details.
 - Invalid frontmatter — check YAML at top of file
 - `docs/` folder missing — create it or update path in settings
 
-See [Troubleshooting](../how-to/rebuild-site.md#troubleshooting) guides.
+Fix the issue in GitHub, then trigger a manual rebuild from the dashboard.
+
+See [Troubleshooting](../how-to/rebuild-site.md#common-issues) guides.
 
 ### Q: Can I request a new feature?
 

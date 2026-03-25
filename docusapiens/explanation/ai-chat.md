@@ -12,7 +12,7 @@ The DocuSapiens AI chat is different from generic AI assistants. It uses **Retri
 | "I think..." / "Probably..." answers | Cited answers with links |
 | Can invent information | Never invents — only references what exists |
 | Generic knowledge about your domain | Specific to your exact product/project |
-| Outdated information | Always current (retrains every deploy) |
+| May be outdated | Always current (retrains on every rebuild) |
 
 ---
 
@@ -107,18 +107,18 @@ Send response to user
 
 [SCREENSHOT PLACEHOLDER: Chat interface showing: user message on left, AI response on right with highlighted citations. Below the response, show "Sources:" with 2-3 links to the actual documentation files]
 
-### Step 3: Continuous Updates
+### Step 3: Updates After Rebuild
 
-Every time you commit new docs:
+Every time you trigger a rebuild:
 
 ```
-1. Docusaurus builds your site
-2. New/updated Markdown is extracted
+1. DocuSapiens builds your site
+2. Updated Markdown is extracted
 3. Vector database is updated with new content
-4. AI chat immediately knows about the changes
+4. AI chat reflects the latest docs
 ```
 
-**Result:** Your AI is never out of sync with your docs.
+**Result:** Trigger a rebuild to keep your AI in sync with your docs.
 
 ---
 
@@ -182,7 +182,7 @@ These are close in "meaning space", so they match.
 
 Because they capture **semantic similarity** — meaning-based matching. A question about "resetting passwords" will find docssaying "password reset" even if the exact words don't match.
 
-**Technology:** DocuSapiens uses **OpenAI's embedding models** for maximum accuracy.
+**Technology:** DocuSapiens uses state-of-the-art vector embedding models for semantic accuracy.
 
 ---
 
@@ -267,8 +267,8 @@ This is a feature, not a bug. **Accuracy over plausibility.**
 
 - ✅ Docs are indexed and stored for search/chat
 - ✅ Chat conversations are stored temporarily (30-day deletion)
-- ⚠️ If you have secrets in docs (don't!), index them privately
-- ✅ Private repos require authentication to access the site
+- ⚠️ If you have secrets in docs (don't!), they will be indexed
+- ✅ Only **public repos** are supported during Alpha
 
 ### LLM Training
 

@@ -330,8 +330,8 @@ Conversation history is stored:
 ## Next Steps
 
 - **Deploy your site:** [Getting Started Tutorial](../tutorials/getting-started.md)
-- **Update docs for better answers:** [Docusaurus Guide](../../docusaurus/README.md)
-- **See all features:** [Dashboard Reference](../reference/dashboard.md)
+- **Write better docs for better answers:** [Writing Documentation Guide](../../writing-docs/README.md)
+- **Manage sites:** [Manage Your Sites](./manage-sites.md)
 
 ---
 

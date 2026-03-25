@@ -4,28 +4,26 @@
 
 This diagram shows how DocuSapiens transforms your GitHub repository into a live, AI-powered documentation site:
 
-[SCREENSHOT PLACEHOLDER: System architecture diagram showing GitHub repo → DocuSapiens → hosted site + AI chat pipeline. Include: GitHub repo, Cloud Build trigger, Docusaurus build container, GCS bucket storage, CDN/hosting layer, AI RAG pipeline components]
+[SCREENSHOT PLACEHOLDER: System architecture diagram showing GitHub repo → DocuSapiens → hosted site + AI chat pipeline]
 
 ---
 
 ## The Pipeline: From GitHub to Live Site
 
-### Phase 1: Detection & Build (30-60 seconds)
+### Phase 1: Build (30-60 seconds)
 
-**Input:** You push Markdown files to GitHub
+**Input:** You trigger a rebuild from the dashboard
 
 ```
-1. User commits docs/ folder to main branch
-2. GitHub webhook triggers DocuSapiens API
-3. DocuSapiens fetches your latest Markdown files
-4. Docusaurus template engine processes files
-5. Static HTML site is generated
-6. Files uploaded to Google Cloud Storage (GCS)
+1. DocuSapiens fetches your latest Markdown files from GitHub
+2. Docusaurus template engine processes files
+3. Static HTML site is generated
+4. Files uploaded to hosting
 ```
 
-**Output:** Your site is live at `https://<subdomain>.docusapiens.ai`
+**Output:** Your site is live at `https://<site-name>.docusapiens.site`
 
-[SCREENSHOT PLACEHOLDER: Terminal showing `git push` output, then DocuSapiens build logs in dashboard showing "Fetching files... Building... Deploying..." with timestamps]
+[SCREENSHOT PLACEHOLDER: Dashboard build progress showing "Fetching files... Building... Deploying..." with timestamps]
 
 ### Phase 2: AI Chat Training (30-45 seconds)
 
@@ -49,7 +47,6 @@ Your deployed site includes:
 
 ```
 ├── Static HTML/CSS/JS (served via CDN)
-├── Search index (Algolia or built-in)
 └── AI Chat backend (connected to vector DB)
 ```
 
@@ -65,54 +62,34 @@ Users can:
 
 ### GitHub Integration
 
-- DocuSapiens listens for push events to your repository
-- Supports public and private repos (private requires Basic+ plan)
-- Automatically detects `docs/` folder structure
-- No need to touch `docusaurus.config.js` — DocuSapiens provides sensible defaults
+- DocuSapiens connects to your GitHub repository using GitHub OAuth
+- Supports **public repositories** (private repo support coming soon)
+- Reads files from the `docs/` folder by default; you can specify a different path when creating the site
+- No changes are ever made to your repository
 
-### Cloud Build
+### Build Engine
 
-DocuSapiens uses **Google Cloud Build** to:
-- Containerize your build environment
-- Run the Docusaurus build process
-- Generate static assets
-- Cache builds for faster rebuilds
-
-Why Cloud Build? It's serverless, scales automatically, and completes builds in seconds.
-
-### Docusaurus Engine
-
-The **Docusaurus static site generator** converts your Markdown into:
+DocuSapiens uses the **Docusaurus static site generator** to convert your Markdown into:
 - HTML pages
-- Search indexes
-- Versioned documentation (if configured)
-- Internationalized content (if configured)
+- Navigation structure
+- Search index
 
 Docusaurus is the same framework powering React, Babel, and Kubernetes docs.
 
-### Hosting (Google Cloud Storage + CDN)
+### Hosting
 
 Your built site is:
-- Stored in Google Cloud Storage buckets
-- Served through Google's global CDN
+- Served through a global CDN
 - Cached for sub-second page loads
 - HTTPS by default with managed certificates
 
-Geographic regions: **eu-west-1** (Ireland), with plans for multi-region soon.
-
-### AI Chat Backend
+### AI Chat
 
 Separate service that:
-- Indexes documentation in real-time
+- Indexes documentation after each build
 - Runs retrieval-augmented generation (RAG)
 - Maintains conversation history per user
 - Enforces rate limits and fair usage
-
-Backend stack: Node.js, PostgreSQL, vector embeddings via OpenAI API.
-
----
-
-## Data Flow for AI Chat
 
 When a user asks a question in the chat widget:
 
@@ -146,7 +123,7 @@ Answer with citations sent to user
 
 - Static site generation = sub-100ms page loads
 - Global CDN = content served from nearest edge
-- Cloud Build = parallel, cached builds
+- Parallel, cached builds
 
 ### ✅ Reliability
 
@@ -157,9 +134,9 @@ Answer with citations sent to user
 ### ✅ Security
 
 - GitHub OAuth (no passwords stored)
-- Private repos require authentication
+- **Public repos only** during Alpha
 - SSL/TLS encryption for all traffic
-- Source code never scanned — only docs folder indexed
+- Source code never scanned — only the docs folder is indexed
 - Rate limiting on AI chat
 
 ### ✅ Cost Efficiency
@@ -198,36 +175,13 @@ DocuSapiens scales automatically:
 
 ---
 
-## Technical Decisions & Trade-offs
-
-### Why Docusaurus Over Alternatives?
-
-| Factor | Docusaurus | GitBook | ReadTheDocs | Notion |
-|--------|-----------|---------|-----------|--------|
-| **Open source** | ✅ | ✗ | ✅ | ✗ |
-| **Markdown-native** | ✅ | Partial | ✅ | ✗ |
-| **Self-hostable** | ✅ | ✗ | ✅ | ✗ |
-| **Zero config** | ✗ | ✅ | ✗ | ✅ |
-| **SEO** | ✅ | ✅ | ✅ | Partial |
-| **AI integration** | ✅ (via DocuSapiens) | ✅ | ✗ | ✅ |
-
-DocuSapiens uses Docusaurus because it's powerful (handles versioning, i18n, extensibility) while we handle all the configuration burden.
-
-### Why Google Cloud?
-
-- Proven infrastructure for large-scale docs (used internally by Google, Meta, etc.)
-- Global CDN via Cloud CDN
-- Integrated with GitHub via Cloud Build
-- Cost-effective for variable workloads
-
----
-
 ## Next Steps
 
-- [Understanding the AI Chat System](./ai-chat.md)
-- [Getting Started Deployment](../tutorials/getting-started.md)
-- [How to Connect Your Repo](../how-to/connect-github-repo.md)
+- [How the AI Chat Works](./ai-chat.md)
+- [Getting Started Tutorial](../tutorials/getting-started.md)
+- [Connect Your Repo](../how-to/connect-github-repo.md)
 
 ---
 
 **Questions about the architecture?** [Contact support](mailto:support@docusapiens.ai)
+

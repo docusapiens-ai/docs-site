@@ -53,7 +53,7 @@ When we exit Alpha, we'll announce pricing with transition details for all users
 
 - Public repositories only
 - AI chat has fair-use limits (~10-50 requests/user/day depending on load)
-- No custom domain (uses docusapiens.ai subdomain only)
+- No custom domain (sites hosted at `<site-name>.docusapiens.site`)
 - No team features yet
 
 ---
@@ -86,7 +86,7 @@ When we exit Alpha, we'll announce pricing with transition details for all users
 
 ### What's Included
 
-- ✅ Deploy private GitHub repositories
+- ✅ Private GitHub repositories *(coming soon — not yet available during Alpha)*
 - ✅ More AI chat requests for customers
 - ✅ Larger docs per site
 - ✅ Email support with guaranteed response time
@@ -262,7 +262,6 @@ We'll discuss:
 
 ## See Also
 
-- [Current Account Limits](./dashboard.md)
 - [FAQs](./faq.md)
 - [Getting Started](../tutorials/getting-started.md)
 
