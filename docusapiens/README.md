@@ -12,7 +12,7 @@ Connect your GitHub repo → get a live, AI-powered documentation site. No confi
 ## Get Started
 
 1. Sign up at [app.docusapiens.ai](https://app.docusapiens.ai) with your GitHub account
-2. Connect a repo with a `docs/` folder
+2. Connect a repo with .md files
 3. Your site goes live — with AI chat included
 
 → [Full Getting Started tutorial](./tutorials/getting-started.md)
