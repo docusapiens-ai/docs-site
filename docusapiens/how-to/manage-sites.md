@@ -18,7 +18,7 @@ Understand how to view, configure, delete, and monitor your deployed documentati
 
 From the dashboard, click **"Sites"** in the left sidebar.
 
-[SCREENSHOT PLACEHOLDER: Dashboard with "Sites" menu item highlighted in sidebar]
+![Sidebar del dashboard con "Sites" seleccionado](/img/sites.png)
 
 ### Step 2: See Your Sites List
 
@@ -33,11 +33,7 @@ Each site shows:
 - **Last deployed** (timestamp)
 - **Build status** (✓ Success / ❌ Failed)
 
-[SCREENSHOT PLACEHOLDER: Sites list page showing 2-3 example sites in card format with:
-- Site name
-- URL as a link
-- Status indicator
-- "..." menu button]
+![Lista de sites en formato grid con nombre, URL, repositorio y acciones](/img/sites.png)
 
 ### Step 3: Click a Site to See Details
 
@@ -48,12 +44,7 @@ Click on any site card to see:
 - Analytics (if available)
 - AI chat status
 
-[SCREENSHOT PLACEHOLDER: Individual site details page showing:
-- Site URL with copy button
-- Build history list
-- Current status
-- AI chat status indicator
-- Settings button]
+![Historial de builds del site con fecha, estado, branch y timestamps](/img/site-builds.png)
 
 ---
 
@@ -63,9 +54,7 @@ Click on any site card to see:
 
 On any site's detail page, look for a **"Settings"** button or **gear icon**.
 
-Click it to open settings.
-
-[SCREENSHOT PLACEHOLDER: Site detail page with "Settings" button or gear icon highlighted]
+![Página de Settings — perfil de cuenta](/img/settings.png)
 
 ### Step 2: Available Settings
 
@@ -80,9 +69,7 @@ To change the branch:
 3. Click "Save"
 4. Trigger a manual rebuild to deploy from the new branch
 
-[SCREENSHOT PLACEHOLDER: Settings form showing:
-- Repository field (read-only): "docusapiens-ai/docs-site"
-- Branch dropdown: "main" with dropdown menu showing alternatives]
+![Formulario de creación mostrando los campos de repositorio, branch y ruta](/img/site-create.png)
 
 #### Docs Folder
 
@@ -92,7 +79,7 @@ Default: `docs/`
 
 If your docs are in a different location (e.g., `documentation/` or `src/docs/`), change it here.
 
-[SCREENSHOT PLACEHOLDER: Docs folder input field with "docs/" as default, with info text "This is where we look for .md files"]
+![Campo Docs Path en el formulario de creación de site](/img/site-create.png)
 
 #### Site URL
 
@@ -102,7 +89,7 @@ Read-only field showing `your-site.docusapiens.site`
 
 To change your site name, you'll need to create a new site. (This feature might be available in future versions.)
 
-[SCREENSHOT PLACEHOLDER: Site URL field showing "my-awesome-docs.docusapiens.site" with "Active" status indicator]
+![Lista de sites mostrando la URL del site con dominio .docusapiens.site](/img/sites.png)
 
 ### Step 3: Save Changes
 
@@ -110,7 +97,7 @@ After making changes, click **"Save Settings"**.
 
 If changes require a rebuild (e.g., branch or docs folder change), trigger one manually.
 
-[SCREENSHOT PLACEHOLDER: Settings form with "Save Settings" button, possibly showing success message after save]
+![Página de Settings con campos de perfil actualizables](/img/settings.png)
 
 ---
 
@@ -120,10 +107,7 @@ If changes require a rebuild (e.g., branch or docs folder change), trigger one m
 
 On the site details page, scroll down to see **"Recent Builds"** or **"Build History"**:
 
-[SCREENSHOT PLACEHOLDER: Build history list showing multiple builds with:
-- Timestamp of each build
-- Status (✓ Success / ❌ Failed / ⏳ In Progress)
-- Duration ("42 seconds")]
+![Historial de builds con estado Chat Ready y Queued, fechas y branch](/img/site-builds.png)
 
 ### Build Status Indicators
 
@@ -143,12 +127,7 @@ Click on any build to see:
 - Estimated duration
 - Deployment time
 
-[SCREENSHOT PLACEHOLDER: Build detail page showing:
-- Build #42 | Context
-- Build started: 2025-02-19 at 14:32
-- Build completed: 42 seconds elapsed
-- Full log output showing each step
-- "Rebuild this version" button]
+![Tabla de builds con columnas: Created, Status, Branch, Path, Site Ready, Chat Ready, Updated](/img/site-builds.png)
 
 ---
 
@@ -162,7 +141,7 @@ To rebuild from current settings:
 2. Click it
 3. Confirm the rebuild
 
-[SCREENSHOT PLACEHOLDER: "Rebuild" button on site page, or in a "..." menu]
+![Página de Builds con el botón New Build en la parte superior](/img/site-builds.png)
 
 DocuSapiens will fetch the latest files from your GitHub branch and rebuild.
 
@@ -174,7 +153,7 @@ If you want to redeploy an older version while you fix something:
 2. Find the build you want to restore
 3. Click **"Restore"** or **"Deploy"**
 
-[SCREENSHOT PLACEHOLDER: Build history with "Restore" button next to an older successful build]
+![Historial de builds — cada fila tiene acciones de reintento o restauración](/img/site-builds.png)
 
 ---
 
@@ -190,7 +169,7 @@ On the site details page, look for **"AI Chat Status"**:
 | ⏳ Training | AI is being trained (happens after each build) |
 | ❌ Error | Something went wrong with AI training |
 
-[SCREENSHOT PLACEHOLDER: AI Chat section showing status indicator with "Ready" and last trained timestamp]
+![Estado Chat Ready en el historial de builds (columna Chat Ready)](/img/site-builds.png)
 
 ### Force Re-index
 
@@ -201,7 +180,7 @@ If you notice the AI chat is out of sync:
 
 The AI will re-read your docs and retrain its model.
 
-[SCREENSHOT PLACEHOLDER: AI Chat section with "Reindex AI" button highlighted]
+![Builds con botón New Build para forzar reindexación](/img/site-builds.png)
 
 ### View AI Chat Analytics (Coming Soon)
 
@@ -219,7 +198,7 @@ If you want to disable the chat widget on your site:
 2. Toggle **"Enable AI Chat"** to OFF
 3. Save
 
-[SCREENSHOT PLACEHOLDER: Toggle switch for "Enable AI Chat" showing ON/OFF state]
+
 
 ---
 
@@ -239,7 +218,7 @@ Deleting a site:
 2. Look for **"Danger Zone"** section in red
 3. Click **"Delete Site"**
 
-[SCREENSHOT PLACEHOLDER: Danger Zone section with red "Delete Site" button]
+
 
 4. A confirmation dialog will appear:
 
@@ -257,7 +236,7 @@ Type your site name to confirm: ________
 5. Type the site name as shown to confirm
 6. Click **"Delete"**
 
-[SCREENSHOT PLACEHOLDER: Confirmation modal with text input field for site name, delete button]
+
 
 ---
 

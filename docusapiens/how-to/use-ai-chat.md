@@ -24,17 +24,13 @@ Look for:
 - Or a **"Ask about these docs"** button
 - Typically in the bottom-right corner of the page
 
-[SCREENSHOT PLACEHOLDER: DocuSapiens site screenshot with chat widget icon highlighted in bottom-right corner with arrow pointing to it]
+
 
 ### Accessing the Chat
 
 Click the chat icon to open the chat interface.
 
-[SCREENSHOT PLACEHOLDER: Chat widget expanding from closed state, showing:
-- Chat window opening
-- Input field at bottom
-- "Start typing..." placeholder text
-- Close button (X) at top]
+
 
 ---
 
@@ -54,7 +50,7 @@ How do I authenticate users?
 Can I use this with Windows?
 ```
 
-[SCREENSHOT PLACEHOLDER: Chat input field with example question typed in: "How do I get started?"]
+
 
 Note: Questions don't need to be perfectly phrased. The AI understands conversational language:
 
@@ -71,7 +67,7 @@ Note: Questions don't need to be perfectly phrased. The AI understands conversat
 
 Press **Enter** on your keyboard, or click the **Send button** (usually a paper plane icon ✈️).
 
-[SCREENSHOT PLACEHOLDER: Chat showing sent message from user highlighted, message appearing in chat bubble on the left side]
+
 
 ### Step 3: Read the AI Response
 
@@ -79,11 +75,7 @@ The AI generates an answer in 3-5 seconds.
 
 **You should see:**
 
-[SCREENSHOT PLACEHOLDER: Full chat conversation showing:
-- User message on the left
-- AI response on the right
-- Citation links below the response (blue, underlined) showing source docs
-- Example: "See also: Getting Started Guide → API Reference →"]
+![Bandeja de conversaciones del chat en el dashboard de DocuSapiens](/img/chats.png)
 
 The response will include:
 - **Natural language answer** — The actual information from your docs
@@ -99,7 +91,7 @@ Click any cited link to:
 - See related pages
 - Access more detailed information
 
-[SCREENSHOT PLACEHOLDER: Citation links highlighted in blue, user clicking one, link opening new tab/page to the actual documentation page]
+
 
 ---
 
@@ -117,10 +109,7 @@ You: "What about Windows?"
 AI: [understands "about Windows" = same installation steps but for Windows]
 ```
 
-[SCREENSHOT PLACEHOLDER: Multi-message conversation showing:
-1. Initial question and answer
-2. Follow-up question
-3. AI understanding context and answering follow-up]
+
 
 ### Specific Questions
 
@@ -158,7 +147,7 @@ Every answer includes **source citations**:
 
 Click the citation to see the exact paragraph from your docs.
 
-[SCREENSHOT PLACEHOLDER: Answer with multiple citation links, one being hovered/highlighted, showing tooltip with doc title]
+
 
 ### "I don't have that in your docs"
 
@@ -181,7 +170,7 @@ contact support."
 
 To start fresh, look for a **"Clear"** or **"New Chat"** button:
 
-[SCREENSHOT PLACEHOLDER: Chat settings menu with "Clear chat" option highlighted]
+
 
 This clears only your current session (doesn't affect your docs).
 
@@ -195,7 +184,7 @@ Your conversation history is saved for 30 days.
 
 Most chat widgets can be resized by dragging the edges:
 
-[SCREENSHOT PLACEHOLDER: Chat widget with resize handle visible at corner, user dragging it to make larger/smaller]
+
 
 ---
 
@@ -297,7 +286,7 @@ Conversation history is stored:
 2. Check if the site build is complete in the dashboard
 3. Wait for "AI Status: Ready"
 
-[SCREENSHOT PLACEHOLDER: Dashboard showing build complete with "AI Status: Ready ✓" in green]
+![Historial de builds del sitio en DocuSapiens](/img/site-builds.png)
 
 ### ❌ AI Gives Wrong Answer
 

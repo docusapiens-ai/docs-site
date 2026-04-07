@@ -18,7 +18,7 @@ The main landing page after you sign in.
 - Links to quick actions ("Create Site", "View Sites", "Settings")
 - Announcements or platform updates
 
-[SCREENSHOT PLACEHOLDER: Dashboard home page showing welcome message, stats cards, recent activity list]
+![Dashboard home — Sites list after login](/img/dashboard-home.png)
 
 ---
 
@@ -40,7 +40,7 @@ Manage all your deployed documentation sites.
 - **Search** — Find a specific site by name or URL
 - **Filter** — Show only Active/Failed/Building sites
 
-[SCREENSHOT PLACEHOLDER: Sites page showing grid/list of sites with status indicators, search bar, "+New Site" button]
+![Sites page — grid of sites with status, URL and actions](/img/sites.png)
 
 **Common Actions:**
 - Create new site
@@ -49,24 +49,10 @@ Manage all your deployed documentation sites.
 - Delete a site
 - Open site in new tab (go to live URL)
 
+![Create New Site form](/img/site-create.png)
+
 ---
 
-### Site Details Page
-
-**URL:** `/sites/:id`
-
-View detailed information about a specific site.
-
-**Sections:**
-
-#### Site Overview
-- **Site Name** — Usually the GitHub repo name
-- **Status** — Active (green) / Building / Failed (red)
-- **URL** — Clickable link to your live site
-- **Last Deployed** — Timestamp of last build
-- **Repository** — Link to the GitHub repo
-
-[SCREENSHOT PLACEHOLDER: Site header showing site name, status badge, URL with copy button, last deployed timestamp]
 
 #### Build History
 - **Recent Builds** — List of all deployments
@@ -75,27 +61,10 @@ View detailed information about a specific site.
 - **Triggered By** — "Push to main" or "Manual rebuild"
 - **View Logs** — Click a build to see detailed logs
 
-[SCREENSHOT PLACEHOLDER: Build history table with columns: Date, Status, Duration, Trigger, Actions (view/restore buttons)]
+![Build history table with status badges (Chat Ready / Queued), branch and timestamps](/img/site-builds.png)
 
-#### AI Chat Status
-- **Status** — Ready ✓ / Training ⏳ / Error ❌
-- **Last Trained** — When AI was last trained on your docs
-- **Reindex Button** — Force re-index if out of sync
 
-[SCREENSHOT PLACEHOLDER: AI chat status card showing ready status, training timestamp, reindex button]
 
-#### Settings
-- **Branch** — Which GitHub branch to deploy from
-- **Docs Folder** — Path to documentation folder (default: `docs/`)
-- **Site URL** — The `.docusapiens.site` domain (read-only)
-- **Save** — Apply any changes
-
-[SCREENSHOT PLACEHOLDER: Settings form showing branch selector, docs folder input, read-only site URL field]
-
-#### Danger Zone
-- **Delete Site** — Permanently remove the site (cannot be undone)
-
-[SCREENSHOT PLACEHOLDER: Red danger zone section with delete button and warning text]
 
 ---
 
@@ -112,7 +81,7 @@ View all chat conversations and interactions across your sites.
 - Export conversations
 - Manage chat preferences
 
-[SCREENSHOT PLACEHOLDER: Chats page with empty state or sample chat list]
+![Chats page — inbox with conversation list](/img/chats.png)
 
 ---
 
@@ -128,7 +97,7 @@ Self-service support and documentation.
 - Links to full documentation (this docs-site)
 - Video tutorials (when available)
 
-[SCREENSHOT PLACEHOLDER: Help center page with FAQ accordion, search bar, category links]
+![Help Center — Coming Soon page](/img/help-center.png)
 
 ---
 
@@ -144,7 +113,7 @@ Configure your account and preferences.
 - **Avatar** — Profile picture from GitHub
 - **Joined** — Date you created your DocuSapiens account
 
-[SCREENSHOT PLACEHOLDER: Account settings form showing email, username, profile picture, joined date]
+![Settings — Profile: username and email fields](/img/settings.png)
 
 #### GitHub Connection
 - **Connected Account** — Your GitHub username
@@ -153,7 +122,7 @@ Configure your account and preferences.
 - **Reconnect** — Re-authorize GitHub access if needed
 - **Disconnect** — Revoke DocuSapiens access to GitHub
 
-[SCREENSHOT PLACEHOLDER: GitHub section showing "Connected as @username", disconnect button]
+![Settings — Appearance: font selector and light/dark theme toggle](/img/settings-appearance.png)
 
 #### Notification Preferences (Coming Soon)
 - Email on failed builds
@@ -167,7 +136,7 @@ Configure your account and preferences.
 #### Danger Zone
 - **Delete Account** — Permanently delete your account and all sites
 
-[SCREENSHOT PLACEHOLDER: Red danger zone with delete account button and warning]
+
 
 ---
 
@@ -183,21 +152,21 @@ View your current plan and upgrade options.
 - **Renewal Date** — When your next billing period starts
 - **Usage** — Current usage vs limits (sites, chat requests, storage)
 
-[SCREENSHOT PLACEHOLDER: Current plan card showing "Free Plan (Alpha)" with usage bars]
+![Billing — credit balance and transaction history](/img/billing.png)
 
 #### Plan Comparison
 - **Free Plan** — 0€/month, unlimited sites, public repos
 - **Basic Plan** — 10€/month, private repos, more AI chat
 - **Premium Plan** — Custom pricing, SLA support, analytics
 
-[SCREENSHOT PLACEHOLDER: Pricing table with three columns (Free/Basic/Premium), features listed, upgrade buttons]
+![Billing — Top Up Credits button and transaction list](/img/billing.png)
 
 #### Upgrade Button
 - Click to upgrade from Free to Basic (or higher)
 - Enter payment information
 - Subscription begins immediately
 
-[SCREENSHOT PLACEHOLDER: Upgrade plan CTA button, payment form below]
+![Billing — credit top-up flow](/img/billing.png)
 
 ---
 
@@ -213,7 +182,7 @@ Manage team members and permissions.
 - Remove members
 - View team activity log
 
-[SCREENSHOT PLACEHOLDER: Users page with empty state or sample team member list]
+
 
 ---
 
@@ -229,7 +198,7 @@ Track ongoing builds and tasks.
 - Recent completed tasks
 - Estimated completion time
 
-[SCREENSHOT PLACEHOLDER: Tasks list showing active builds with progress bars, queue status]
+
 
 ---
 
@@ -278,7 +247,7 @@ The dashboard is responsive and works on mobile phones/tablets.
 - Build history in compact view
 - Large buttons for easier touch interaction
 
-[SCREENSHOT PLACEHOLDER: Dashboard on mobile showing hamburger menu, single column layout]
+
 
 ---
 

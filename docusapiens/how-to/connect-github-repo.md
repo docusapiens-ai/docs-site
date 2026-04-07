@@ -20,19 +20,13 @@ Add a new GitHub repository to DocuSapiens and deploy its documentation as a liv
 
 From the DocuSapiens dashboard, click **"Sites"** in the sidebar.
 
-[SCREENSHOT PLACEHOLDER: Dashboard sidebar with "Sites" option highlighted]
-
-You'll see:
-- A list of your existing deployed sites
-- A **"+New Site"** or **"Create Site"** button
-
-[SCREENSHOT PLACEHOLDER: Sites list page showing existing sites (if any) with cards/rows, prominent "New Site" button at top or bottom]
+![Sidebar con Sites seleccionado y lista de sites](/img/sites.png)
 
 ### Step 2: Click "Create New Site"
 
 Click the **"+New Site"** button.
 
-[SCREENSHOT PLACEHOLDER: "New Site" button highlighted in the Sites page]
+![Botón Create Site en la página de Sites](/img/sites.png)
 
 A repository selection modal or page will appear.
 
@@ -43,7 +37,7 @@ The modal shows a list of your GitHub repositories.
 1. **Search** for your repository by typing its name (optional)
 2. Click the repository you want to deploy
 
-[SCREENSHOT PLACEHOLDER: Repository selection modal showing list of repos with search bar at top, selected repo highlighted in blue]
+![Formulario de creación de site — campo Repository URL y opciones de configuración](/img/site-create.png)
 
 You should see:
 - Repository name
@@ -81,7 +75,7 @@ https://<YOUR-SITE-NAME>.docusapiens.site
 - `my project` (spaces not allowed)
 - `docs` (likely taken)
 
-[SCREENSHOT PLACEHOLDER: Site name input field with validation feedback, showing "Available ✓" or "Already taken ✗" in real-time]
+![Campo Subdomain en el formulario de creación de site](/img/site-create.png)
 
 ### Step 5: Select the Branch (Optional)
 
@@ -93,7 +87,7 @@ Common alternatives:
 - `production` — for docs that only update on releases
 - `develop` — for documentation of features in development
 
-[SCREENSHOT PLACEHOLDER: Branch dropdown menu showing options like "main", "develop", "production" with current selection highlighted]
+![Campo Branch en el formulario de creación de site](/img/site-create.png)
 
 **Note:** You can change the branch later if you update your deployment settings.
 
@@ -106,7 +100,7 @@ By default, DocuSapiens looks for a `docs/` folder in the repository root.
 - `src/docs/`
 - `website/docs/`
 
-[SCREENSHOT PLACEHOLDER: Folder path input field with "docs/" as default, option to change it]
+![Campo Docs Path en el formulario de creación de site](/img/site-create.png)
 
 ### Step 7: Review and Create
 
@@ -121,19 +115,13 @@ Docs folder:    docs/ ✓
 
 Click **"Create Site"** to proceed.
 
-[SCREENSHOT PLACEHOLDER: Summary of choices displayed, "Create Site" button prominently shown]
+![Formulario completo de creación listo para confirmar](/img/site-create.png)
 
 ### Step 8: Monitor the Build
 
 Once you click "Create Site", DocuSapiens starts building:
 
-[SCREENSHOT PLACEHOLDER: Live build progress screen showing:
-- "Connecting to GitHub..." ✓
-- "Fetching Markdown files..." ✓
-- "Building with Docusaurus..." (in progress)
-- "Uploading to hosting..." (pending)
-- "Training AI index..." (pending)
-With estimated time: "~45 seconds remaining"]
+![Historial de builds con estados de despliegue](/img/site-builds.png)
 
 **What's happening:**
 1. DocuSapiens connects to your GitHub repository
@@ -146,11 +134,7 @@ With estimated time: "~45 seconds remaining"]
 
 When the build completes successfully:
 
-[SCREENSHOT PLACEHOLDER: Green "Build Successful ✓" message, showing:
-- Site URL: https://my-awesome-project.docusapiens.site
-- Build time: 42 seconds
-- AI Status: Ready
-- Button: "Visit Site"]
+![Build con estado Chat Ready — site y chat listos](/img/site-builds.png)
 
 Click **"Visit Site"** to see your live documentation!
 

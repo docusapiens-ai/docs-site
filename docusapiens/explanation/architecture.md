@@ -4,7 +4,7 @@
 
 This diagram shows how DocuSapiens transforms your GitHub repository into a live, AI-powered documentation site:
 
-[SCREENSHOT PLACEHOLDER: System architecture diagram showing GitHub repo → DocuSapiens → hosted site + AI chat pipeline]
+
 
 ---
 
@@ -23,7 +23,7 @@ This diagram shows how DocuSapiens transforms your GitHub repository into a live
 
 **Output:** Your site is live at `https://<site-name>.docusapiens.site`
 
-[SCREENSHOT PLACEHOLDER: Dashboard build progress showing "Fetching files... Building... Deploying..." with timestamps]
+![Historial de builds mostrando el estado de despliegue de cada build](/img/site-builds.png)
 
 ### Phase 2: AI Chat Training (30-45 seconds)
 
@@ -39,7 +39,7 @@ While the site is deploying:
 
 **Output:** Your AI chat is ready to answer questions about your docs
 
-[SCREENSHOT PLACEHOLDER: Dashboard showing "Build successful" with AI training status "Ready to chat" in green]
+![Build con estado Chat Ready — site y chat listos para usar](/img/site-builds.png)
 
 ### Phase 3: Live & Serving
 
@@ -113,7 +113,7 @@ Answer with citations sent to user
 
 **This design ensures:** No hallucinations. Every answer is from your actual docs.
 
-[SCREENSHOT PLACEHOLDER: Chat conversation showing user question, AI response, and citations/links to source docs]
+![Sección Chats del dashboard donde llegan las conversaciones](/img/chats.png)
 
 ---
 

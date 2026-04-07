@@ -27,7 +27,7 @@ DocuSapiens does **not** automatically rebuild your site when you push to GitHub
 
 From the DocuSapiens dashboard, click **"Sites"** in the sidebar, then click on the site you want to rebuild.
 
-[SCREENSHOT PLACEHOLDER: Sites list with a site card highlighted]
+![Lista de sites — haz clic en el site que quieres rebuildar](/img/sites.png)
 
 ---
 
@@ -35,12 +35,7 @@ From the DocuSapiens dashboard, click **"Sites"** in the sidebar, then click on 
 
 On the site details page, find the **"Rebuild"** button.
 
-This is typically located:
-- At the top of the site details page
-- Next to the most recent build in the build history
-- In a **"Settings"** or **"Actions"** menu
-
-[SCREENSHOT PLACEHOLDER: Site details page showing "Rebuild" button]
+![Página de Builds del site con botón New Build](/img/site-builds.png)
 
 Click **"Rebuild"**. A confirmation dialog may appear:
 
@@ -59,7 +54,7 @@ Click **"Rebuild"** to confirm.
 
 The build starts immediately. You will see live progress in the dashboard.
 
-[SCREENSHOT PLACEHOLDER: Build progress showing steps: Fetching files → Building → Training AI → Complete]
+![Historial de builds mostrando el progreso del build](/img/site-builds.png)
 
 ---
 
@@ -74,7 +69,7 @@ Duration: 42 seconds
 Site: https://my-awesome-project.docusapiens.site
 ```
 
-[SCREENSHOT PLACEHOLDER: Build success confirmation with green checkmark and site URL]
+![Build con estado Chat Ready tras completarse con éxito](/img/site-builds.png)
 
 ---
 
@@ -87,7 +82,7 @@ To deploy from a different branch (e.g., `production` instead of `main`):
 3. Click **"Save Changes"**
 4. Trigger a rebuild manually to deploy from the new branch
 
-[SCREENSHOT PLACEHOLDER: Settings form with branch dropdown]
+![Formulario de creación de site mostrando el campo Branch](/img/site-create.png)
 
 ---
 
@@ -107,7 +102,7 @@ If a build goes wrong, you can restore a previous successful build:
 2. Find an older successful build
 3. Click **"Restore"** or **"Deploy This Version"**
 
-[SCREENSHOT PLACEHOLDER: Build history showing a "Restore" button on a past build]
+![Tabla de builds — cada fila es una versión deployable](/img/site-builds.png)
 
 ---
 

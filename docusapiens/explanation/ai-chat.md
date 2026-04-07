@@ -78,7 +78,7 @@ Metadata stored (file path, section, title)
 
 **Vector embedding:** A mathematical representation of meaning. Documents with similar meaning have similar vectors.
 
-[SCREENSHOT PLACEHOLDER: Diagram showing Markdown files being broken into chunks, each chunk converted to a vector (visualized as multi-dimensional dots), stored in a database with associated metadata]
+
 
 ### Step 2: Question Processing (When user asks)
 
@@ -105,7 +105,7 @@ Send response to user
 
 **Key point:** The LLM is told to **only use** the provided context. If the context doesn't answer the question, it must say "I don't have that information in the docs."
 
-[SCREENSHOT PLACEHOLDER: Chat interface showing: user message on left, AI response on right with highlighted citations. Below the response, show "Sources:" with 2-3 links to the actual documentation files]
+![Vista de conversaciones en el dashboard de DocuSapiens](/img/chats.png)
 
 ### Step 3: Updates After Rebuild
 

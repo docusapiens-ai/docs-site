@@ -27,15 +27,13 @@ Open [app.docusapiens.ai](https://app.docusapiens.ai) in your browser.
 
 You should see the login page:
 
-[SCREENSHOT PLACEHOLDER: DocuSapiens login page showing "Sign in with GitHub" button prominently]
+![Página de login de DocuSapiens](/img/dashboard-home.png)
 
 ### 1.2 Click "Sign in with GitHub"
 
 Click the blue button labeled "Sign in with GitHub".
 
 You'll be redirected to GitHub's authorization page.
-
-[SCREENSHOT PLACEHOLDER: GitHub OAuth permission screen showing "DocuSapiens is requesting permission to access your account" with scope information]
 
 ### 1.3 Authorize DocuSapiens
 
@@ -47,15 +45,13 @@ GitHub will ask for permission to:
 
 Click **"Authorize"** to continue.
 
-[SCREENSHOT PLACEHOLDER: GitHub authorization confirmation button]
-
 ### 1.4 Return to Dashboard
 
 You'll be redirected back to DocuSapiens. 
 
 **You should see** the main dashboard with a welcome message and an empty sites list.
 
-[SCREENSHOT PLACEHOLDER: DocuSapiens dashboard homepage after successful login, showing "Welcome to DocuSapiens" and a "Create Your First Site" button]
+![Dashboard principal tras iniciar sesión](/img/sites.png)
 
 ---
 
@@ -65,7 +61,7 @@ You'll be redirected back to DocuSapiens.
 
 You should see a button to create a new site. Click it.
 
-[SCREENSHOT PLACEHOLDER: Dashboard with "Create New Site" or "+New Site" button highlighted]
+![Botón Create Site en la página de Sites](/img/sites.png)
 
 ### 2.2 Select Your Repository
 
@@ -78,7 +74,7 @@ A modal or page will appear showing your GitHub repositories.
 
 Select the repository containing your Markdown documentation (must have a `docs/` folder).
 
-[SCREENSHOT PLACEHOLDER: Repository selection interface showing a list of repos with "Public" badges, search bar at top, and selected repo highlighted]
+![Formulario de creación de nuevo site](/img/site-create.png)
 
 ### 2.3 Choose a Site Name
 
@@ -95,7 +91,7 @@ https://<site-name>.docusapiens.site
 
 Example: `my-project`, `awesome-docs`, `company-support`
 
-[SCREENSHOT PLACEHOLDER: Form showing site name input field with text "https://[your-site-name].docusapiens.site" displayed below]
+![Campo de nombre del site en el formulario de creación](/img/site-create.png)
 
 ### 2.4 Select Branch (Optional)
 
@@ -103,19 +99,13 @@ Choose the branch to deploy from (defaults to your repository's default branch, 
 
 If you want to deploy only docs from a specific branch (e.g., `production`), select it here.
 
-[SCREENSHOT PLACEHOLDER: Dropdown menu showing branch options like "main", "develop", "staging"]
+![Formulario de creación mostrando el campo Branch](/img/site-create.png)
 
 ### 2.5 Click "Create Site"
 
 Click the **Create Site** button.
 
-[SCREENSHOT PLACEHOLDER: Form completion with "Create Site" button, form filled out with example values]
-
-**You should see:**
-- A loading spinner ("We're building your site...")
-- A progress message showing the build is in progress
-
-[SCREENSHOT PLACEHOLDER: Loading screen with spinner showing "Building your site..." and a progress bar or status messages]
+![Formulario de creación completo con el botón Create Site](/img/site-create.png)
 
 ---
 
@@ -133,7 +123,7 @@ The build typically takes 30-60 seconds. You'll see:
 5. "Training AI chat..." ⏳
 ```
 
-[SCREENSHOT PLACEHOLDER: Build progress screen with each step listed, some marked with checkmarks, current step highlighted]
+![Historial de builds mostrando estados Chat Ready y Queued](/img/site-builds.png)
 
 ### 3.2 Build Complete
 
@@ -143,7 +133,7 @@ Once successful, you'll see:
 **Site URL:** `https://<site-name>.docusapiens.site`  
 **AI Chat Status:** "Ready"
 
-[SCREENSHOT PLACEHOLDER: Success screen showing green checkmarks, site URL as a clickable link, "Visit Site" button in prominent color]
+![Build completado con estado Chat Ready](/img/site-builds.png)
 
 ---
 
@@ -153,7 +143,7 @@ Once successful, you'll see:
 
 Click the **Visit Site** button or copy the URL from the dashboard.
 
-[SCREENSHOT PLACEHOLDER: Button labeled "Visit Site" or a copyable URL field]
+![Sites con URL y botón Visit](/img/sites.png)
 
 ### 4.2 Explore Your Documentation
 
@@ -165,7 +155,7 @@ Your site should load with:
 - ✅ **AI Chat widget:** Bottom-right corner (look for a chat icon)
 - ✅ **Dark mode toggle:** Top-right corner
 
-[SCREENSHOT PLACEHOLDER: Full DocuSapiens site view showing layout with sidebar, main content, search bar, and chat widget in corner]
+
 
 ### 4.3 Navigate Your Docs
 
@@ -176,7 +166,7 @@ Click on different pages in the sidebar to verify all your Markdown files were i
 - Proper formatting (headings, code blocks, links)
 - Images displaying correctly (if you have any)
 
-[SCREENSHOT PLACEHOLDER: A sample docs page showing formatted Markdown content with headings, code blocks, and links]
+
 
 ---
 
@@ -186,7 +176,7 @@ Click on different pages in the sidebar to verify all your Markdown files were i
 
 Look for a chat icon in the bottom-right corner. Click it.
 
-[SCREENSHOT PLACEHOLDER: Close-up of the AI chat widget icon in the bottom-right corner, showing tooltip "Ask about docs"]
+
 
 ### 5.2 Ask a Question
 
@@ -200,7 +190,7 @@ Type a question about your documentation. For example:
 
 Press Enter or click Send.
 
-[SCREENSHOT PLACEHOLDER: Chat widget open showing input field with example question typed in, "Send" button visible]
+![Sección Chats del dashboard](/img/chats.png)
 
 ### 5.3 Get an AI Answer
 
@@ -211,7 +201,7 @@ The AI will respond with an answer based on your documentation.
 - Citations showing which docs were used (clickable links)
 - Relevant code examples or quotes from your docs
 
-[SCREENSHOT PLACEHOLDER: Chat conversation showing user message, AI response with proper citations and links to source docs]
+![Bandeja de entrada de Chats](/img/chats.png)
 
 ### 5.4 Follow-up Questions
 
@@ -226,7 +216,7 @@ User: "Will that work on Windows?"
 AI: [understands "that" refers to the installation method, gives Windows-specific answer]
 ```
 
-[SCREENSHOT PLACEHOLDER: Multi-message chat showing context awareness across messages]
+
 
 ---
 
@@ -241,13 +231,13 @@ Go to your GitHub repository. Edit one of your Markdown files:
 3. Make a small change (e.g., add text, fix typo)
 4. Click "Commit changes"
 
-[SCREENSHOT PLACEHOLDER: GitHub file editor showing a .md file, pencil icon highlighted, changed text visible]
+
 
 ### 6.2 Commit Your Changes
 
 Add a commit message (e.g., "Update documentation") and click **Commit changes**.
 
-[SCREENSHOT PLACEHOLDER: GitHub commit dialog showing commit message, "Commit changes" button]
+
 
 ### 6.3 Trigger a Rebuild
 
@@ -257,7 +247,7 @@ Now go back to the DocuSapiens dashboard and trigger a rebuild to publish your c
 2. Click **"Rebuild"**
 3. Wait ~45 seconds for the build to complete
 
-[SCREENSHOT PLACEHOLDER: Dashboard showing Rebuild button on site details page]
+![Historial de builds con el botón New Build](/img/site-builds.png)
 
 **Build status progresses through:**
 1. Fetching changes
@@ -291,7 +281,7 @@ with:
 - Customers
 - Colleagues
 
-[SCREENSHOT PLACEHOLDER: Shareable URL displayed in a card/box with copy button]
+![Lista de sites con URL y botón Visit](/img/sites.png)
 
 ### 7.2 Embed the Chat
 
@@ -309,7 +299,7 @@ You can also embed the AI chat on external pages. [See integration guide →](..
 
 **Solution:** Fix the issue in GitHub and trigger a rebuild from the dashboard.
 
-[SCREENSHOT PLACEHOLDER: Error message screen with "Rebuild" button and error details]
+![Historial de builds — estado Queued indica build fallido o en espera](/img/site-builds.png)
 
 ### ❌ "No pages appeared"
 

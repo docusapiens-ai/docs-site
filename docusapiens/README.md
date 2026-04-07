@@ -6,6 +6,7 @@ Connect your GitHub repo → get a live, AI-powered documentation site. No confi
 |--|--|
 | **Dashboard** | [app.docusapiens.ai](https://app.docusapiens.ai) |
 | **Your sites** | `<site-name>.docusapiens.site` |
+| **Landing page** | [docusapiens.ai](https://docusapiens.ai) |
 
 ---
 
