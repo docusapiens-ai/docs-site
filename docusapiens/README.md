@@ -37,6 +37,7 @@ Connect your GitHub repo → get a live, AI-powered documentation site. No confi
 
 ### Reference
 
+- [Repository Structure Reference](./reference/repo-structure.md)
 - [Plans & Pricing](./reference/plans.md)
 - [FAQs](./reference/faq.md)
 

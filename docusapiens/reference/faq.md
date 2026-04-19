@@ -129,14 +129,18 @@ You can change the folder path in site settings.
 
 ### Q: What file formats does DocuSapiens support?
 
-**A:** 
-- ✅ Markdown (`.md`)
-- ✅ MDX (`.mdx`) — Markdown with React components
-- ❌ Plain text (`.txt`)
-- ❌ Word (`.docx`)
-- ❌ Google Docs
+**A:**
 
-See [Writing Documentation Guide](../../writing-docs/README.md) for advanced Markdown features.
+| Type | Extensions | Supported |
+|---|---|---|
+| Documentation | `.md`, `.mdx` | ✅ |
+| Images | `.png`, `.jpg`, `.jpeg`, `.gif`, `.svg`, `.webp`, `.ico` | ✅ |
+| Sidebar metadata | `_category_.json`, `_category_.yml`, `_category_.yaml` | ✅ |
+| Config overrides | `sidebars.json`, `custom.css`, `docusaurus.config.json` | ✅ |
+| Plain text, Word, Google Docs | `.txt`, `.docx`, etc. | ❌ |
+| Source code & executables | `.js`, `.ts`, `.html`, `.py`, etc. | ❌ (ignored) |
+
+See [Repository Structure Reference](./repo-structure.md) for the full technical details.
 
 ### Q: Can I use images in my docs?
 
@@ -164,6 +168,16 @@ Reference them in Markdown:
 ```
 
 But it's better to use Markdown or MDX for component support.
+
+### Q: Can I customize the look and feel of my site?
+
+**A:** Yes, within limits. Place a `docusaurus.config.json` file at the root of your docs folder to override specific settings.
+
+Allowed customizations include `title`, `tagline`, `favicon`, `themeConfig` (colors, navbar, footer), `noIndex`, `i18n`, and more.
+
+The following are **not** configurable: `plugins`, `themes`, `presets`, `scripts`, `stylesheets`, and other fields that could inject arbitrary code into the build.
+
+See [Repository Structure Reference — Configuration Overrides](./repo-structure.md#configuration-overrides-docusaurusconfigjson) for the full allowed/blocked key tables.
 
 ### Q: How do I organize my docs?
 

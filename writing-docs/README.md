@@ -2,6 +2,8 @@
 
 DocuSapiens turns your Markdown files into a live, AI-powered documentation site. This guide covers everything you need to write great docs.
 
+> For a concise technical reference (file types, repo layouts, allowed config keys), see [Repository Structure Reference](../docusapiens/reference/repo-structure.md).
+
 ---
 
 ## Folder Structure
@@ -24,6 +26,100 @@ your-repo/
 - **Nested folders** become sections in your sidebar automatically.
 - **File names** become page URLs (e.g., `docs/guides/installation.md` → `/guides/installation`).
 - The sidebar order follows alphabetical order by default. Use frontmatter to control ordering.
+
+---
+
+## Supported File Types
+
+The build pipeline copies only safe, non-executable files from your repository. Everything else is ignored.
+
+| Category | Accepted extensions / filenames |
+|---|---|
+| Documentation | `.md`, `.mdx` |
+| Images | `.png`, `.jpg`, `.jpeg`, `.gif`, `.svg`, `.webp`, `.ico` |
+| Sidebar metadata | `_category_.json`, `_category_.yml`, `_category_.yaml` |
+| Configuration overrides | `sidebars.json`, `custom.css`, `docusaurus.config.json` |
+
+Files not in this list (`.js`, `.ts`, `.html`, `.env`, etc.) are silently ignored — they are never copied into the build.
+
+---
+
+## Repo Layouts
+
+All three layouts below work without any extra configuration:
+
+```
+# 1 — Plain: images next to Markdown
+my-repo/
+├── intro.md
+└── guides/
+    ├── setup.md
+    └── images/
+        └── diagram.png   ← referenced as ./images/diagram.png
+
+# 2 — Docusaurus-style: images in static/
+my-repo/
+├── docs/
+│   └── guides/setup.md   ← referenced as /img/diagram.png
+└── static/
+    └── img/
+        └── diagram.png   ← served at /img/diagram.png
+
+# 3 — Mixed (both relative and absolute paths work)
+my-repo/
+├── docs/
+│   └── intro.md
+└── static/
+    └── img/hero.png
+```
+
+Use the **"Docs folder"** setting in the dashboard to point at any subdirectory (e.g., `docs/`, `content/`, `wiki/`).
+
+### The `static/` directory
+
+Files inside `static/` are served from the **root of the website**. A file at `static/img/logo.png` is available as `/img/logo.png` in the browser. Use this for images you reference with absolute paths in Markdown:
+
+```markdown
+![Logo](/img/logo.png)         ← absolute path, requires static/img/logo.png
+![Diagram](./images/diag.png)  ← relative path, file next to the .md
+```
+
+---
+
+## Override Files
+
+Place these files at the **root of your docs path** (not in subdirectories) to customize the site:
+
+| File | Effect |
+|---|---|
+| `sidebars.json` | Custom sidebar ordering/grouping — replaces auto-generated sidebar |
+| `custom.css` | Extra CSS applied on top of the default Docusaurus theme |
+| `docusaurus.config.json` | Allowed Docusaurus config overrides (see below) |
+
+### Allowed `docusaurus.config.json` keys
+
+Only the following top-level keys are accepted. All others are silently stripped for security:
+
+**Allowed:** `title`, `tagline`, `favicon`, `url`, `baseUrl`, `trailingSlash`, `onBrokenLinks`, `onBrokenAnchors`, `onBrokenMarkdownLinks`, `onDuplicateRoutes`, `noIndex`, `titleDelimiter`, `i18n`, `storage`, `markdown`, `themeConfig`
+
+**Blocked (cannot be changed):** `plugins`, `themes`, `presets`, `scripts`, `stylesheets`, `headTags`, `clientModules`, `ssrTemplate`, `customFields`, `staticDirectories`, `future`, `siteId`
+
+Within `markdown`, the sub-fields `preprocessor`, `parseFrontMatter`, and `remarkRehypeOptions` are also stripped because they accept JavaScript functions.
+
+Example `docusaurus.config.json`:
+
+```json
+{
+  "title": "My Product Docs",
+  "tagline": "Everything you need to know",
+  "noIndex": false,
+  "themeConfig": {
+    "colorMode": {
+      "defaultMode": "dark"
+    }
+  }
+}
+```
 
 ---
 
