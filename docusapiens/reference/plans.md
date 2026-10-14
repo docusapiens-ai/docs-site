@@ -60,7 +60,7 @@ When we exit Alpha, we'll announce pricing with transition details for all users
 
 ## Basic Plan
 
-**Price:** €10/month
+**Price:** €15/month
 
 *Coming after Alpha*
 
